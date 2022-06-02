@@ -44,13 +44,13 @@ public class Contact extends HttpServlet {
 
 		}
 
-		if (hope.equals("yes")) {
+		if (hope != null && hope.equals("yes")) {
 			out.println("<p>この度は資料請求いただきありがとうございます。以下のリンクから資料ダウンロードが可能です。</p>");
 			String url = "https://www.uverworld.com/s/n4/?ima=3856";
 			out.println("<a href=\"" + url + "\">リンク</a>");
 
 		} else {
-			out.println("資料請求はご希望されていません。");
+			out.println("<p>資料請求はご希望されていません。</p>");
 		}
 
 		Page.footer(out);
